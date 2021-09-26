@@ -12,7 +12,7 @@ type KitchenHandler struct {
 func (KitchenHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Received something")
 	if r.Method == http.MethodPost {
-		//TODO make buffer static
+
 		var buffer = make([]byte, r.ContentLength)
 		r.Body.Read(buffer)
 
@@ -28,11 +28,11 @@ func (KitchenHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 //	decoder := json.Decoder{}
 //	result := decoder.Decode(string(buffer))
 //
-//	//TODO return a order type
+//
 //	return result
 //}
 
-const diningHallPort = ":7500"
+const diningHallPort = ":7600"
 const kitchenServerPort = ":8000"
 
 func main() {
